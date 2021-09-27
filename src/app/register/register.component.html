@@ -1,0 +1,126 @@
+<section class="py-5">
+
+  <!-- <h1>{{registerForm.get('first_name')?.errors|json}}</h1> -->
+
+  <div *ngIf='errorMessage.length > 0' class="alert alert-danger">
+    <p>{{errorMessage}}</p>
+  </div>
+  <div class="container">
+  <div class="w-50 m-auto py-5">
+    <form [formGroup]='registerForm' (ngSubmit)='submitRegisterForm(registerForm)'>
+
+      <div class="form-group">
+        <label for="firstNameInput">First Name</label>
+        <input
+          formControlName="first_name"
+          type="text"
+          class="form-control"
+          id="firstNameInput"
+          aria-describedby="firstNameHelp"
+        />
+        <div *ngIf="registerForm.get('first_name')?.errors != null && registerForm.get('first_name')?.touched" class="alert alert-danger my-2">
+          <small *ngIf="registerForm.get('first_name')?.errors?.required" id="firstNameHelp" class="form-text text-muted"
+            >First Name is Required.</small
+          >
+          <small *ngIf="registerForm.get('first_name')?.errors?.minlength" id="firstNameHelp" class="form-text text-muted"
+            >First Name is Min Lenght 3.</small
+          >
+          <small *ngIf="registerForm.get('first_name')?.errors?.maxlength" id="firstNameHelp" class="form-text text-muted"
+            >First Name is Max Lenght 10.</small
+          >
+            <small *ngIf="registerForm.get('first_name')?.errors?.pattern" id="firstNameHelp" class="form-text text-muted"
+            >First Name  Must be 3 or 10 charer Only.</small
+          >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="lastNameInput">Last Name</label>
+        <input
+          formControlName="last_name"
+          type="text"
+          class="form-control"
+          id="lastNameInput"
+          aria-describedby="lastNameHelp"
+        />
+        <div  *ngIf="registerForm.get('last_name')?.errors != null && registerForm.get('last_name')?.touched" class="alert alert-danger my-2">
+          <small *ngIf="registerForm.get('last_name')?.errors?.required" id="lastNameHelp" class="form-text text-muted"
+            >Last Name is Required.</small
+          >
+          <small *ngIf="registerForm.get('last_name')?.errors?.minlength" id="lastNameHelp" class="form-text text-muted"
+            >Last Name is Min Lenght 3.</small
+          >
+          <small *ngIf="registerForm.get('last_name')?.errors?.maxlength" id="lastNameHelp" class="form-text text-muted"
+            >Last Name is Max Lenght 10.</small
+          >
+           <small *ngIf="registerForm.get('last_name')?.errors?.pattern" id="lastNameHelp" class="form-text text-muted"
+            >Last Name  Must be 3 or 10 charer Only.</small
+          >
+        </div>
+      </div>
+
+        <div class="form-group">
+        <label for="ageInput">Age</label>
+        <input
+          formControlName="age"
+          type="number"
+          class="form-control"
+          id="ageInput"
+          aria-describedby="ageHelp"
+        />
+        <div *ngIf="registerForm.get('age')?.errors != null && registerForm.get('age')?.touched" class="alert alert-danger my-2">
+          <small *ngIf="registerForm.get('age')?.errors?.required" id="ageHelp" class="form-text text-muted"
+            >Age is Required.</small
+          >
+          <small *ngIf="registerForm.get('age')?.errors?.min"  id="ageHelp" class="form-text text-muted"
+            >Age is Min 16.</small
+          >
+          <small *ngIf="registerForm.get('age')?.errors?.max"  id="ageHelp" class="form-text text-muted"
+            >Age is Max  80.</small
+          >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input formControlName="email"
+          type="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+        />
+          <div *ngIf="registerForm.get('email')?.errors != null && registerForm.get('email')?.touched" class="alert alert-danger my-2">
+          <small *ngIf="registerForm.get('email')?.errors?.required"  id="emailHelp" class="form-text text-muted"
+            >Email is Required.</small
+          >
+          <small *ngIf="registerForm.get('email')?.errors?.email" id="emailHelp" class="form-text text-muted"
+            >Email is Invalid.</small
+          >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input formControlName='password'
+          type="password"
+          class="form-control"
+          id="exampleInputPassword1"
+          aria-describedby="passwordHelp"
+        />
+          <div *ngIf="registerForm.get('password')?.errors != null && registerForm.get('password')?.touched" class="alert alert-danger my-2">
+          <small  *ngIf="registerForm.get('password')?.errors?.required"   id="passwordHelp" class="form-text text-muted"
+            >Password is Required.</small
+          >
+          <small *ngIf="registerForm.get('password')?.errors?.pattern" id="passwordHelp" class="form-text text-muted"
+            >Password Must start upperCase and be 3 or 8 char.</small
+          >
+         
+        </div>
+      </div>
+     
+      <button [disabled]='registerForm.invalid'  type="submit" class="btn btn-info">Register</button>
+    </form>
+  </div>
+</div>
+</section>
+

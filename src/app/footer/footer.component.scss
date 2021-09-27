@@ -1,0 +1,64 @@
+
+.home-top a {
+  text-decoration: none !important;
+}
+.home-top i {
+  padding: 4px;
+  margin: 0 auto;
+  background: rgba(242, 84, 84, 0.5);
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 30px;
+  border-radius: 50%;
+  position: absolute;
+  display: block;
+  top: -10px;
+  left: 0;
+  right: 0;
+  transition: background 0.3s;
+  z-index: 10;
+  cursor: pointer !important;
+}
+.footer {
+  font-family: "Poppins", sans-serif;
+  color: #b0b0b0;
+  
+}
+.footer .footer-details-all  
+{
+  position: relative;
+  clear: both;
+  background: #222;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  //background-image: url(../images/dotted-map.png);
+  //background-size: contain;
+}
+.footer .f-info a {
+  color: #b0b0b0;
+  text-decoration: none;
+  cursor: pointer !important;
+}
+.footer .f-info h5 {
+  color: #fff;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+.footer .f-info .f-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.footer .f-info .tags {
+  margin-top: 16px;
+}
+.footer a:hover {
+  color: #f25454;
+}
+.footer .f-info .tags .tag:hover {
+  color: #f25454;
+  //border: 1px solid #f25454;
+}
